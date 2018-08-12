@@ -1,0 +1,25 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/analit/Templates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/analit/Templates/issues"
+  },
+  "homepage": "https://github.com/analit/Templates#readme",
+  "devDependencies": {
+    "bootstrap3": "^3.3.5",
+    "font-awesome": "^4.7.0",
+    "select2": "^4.0.6-rc.1",
+    "select2-bootstrap-theme": "0.1.0-beta.10"
+  }
+}
