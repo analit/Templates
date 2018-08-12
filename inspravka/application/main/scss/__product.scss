@@ -1,0 +1,90 @@
+@media (min-width: 768px) {
+    .product {
+        .__container-image.large-product {
+            width: 358px;
+            height: 358px;            
+        }
+
+    }
+}
+
+@media (min-width: 600px){
+    .product {
+        .product-firm {
+            margin-left: 400px;
+        }
+
+        .other-firms {
+            .firm-name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+.product {
+    .__container-image {
+        &.large-product{
+            img {
+                width: 100%
+            }
+        }
+    }
+    .title {
+        margin: 30px 0;
+    }
+    .product-info {
+        div {
+            &.product-image{
+                float: left;
+
+
+            }
+            &.__container-image {
+                float: none;
+            }
+            .container-address {
+                margin-top: 30px;
+                & > li > ul > li {
+                    span:last-child {
+                        margin-left: 15px;
+                    }
+                }
+            }
+            &.product-firm {
+                /*margin-left: 400px;*/
+                .container-address {
+                    & > li {
+                        & > ul {
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+        .price {
+            color: $red;
+            /*margin: 0 0 30px 0;*/
+            margin-bottom: 30px;
+        }
+    }
+    .tab-content {
+        .images {
+            margin: 20px 0;
+            li {
+                margin-right: 15px;
+            }
+        }
+    }
+    .other-firms {
+        .firm-name {
+            font-size: 14px;
+            /*            white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;*/
+            margin-top: 7px;
+        }
+    }
+}

@@ -1,0 +1,393 @@
+// color scheme http://www.lavishbootstrap.com/?image_url=http://design-seeds.com/palettes/GrassColor510.png
+$color11: rgba(206, 217, 188, 0.51);
+$color1: #CED9BC;
+$color2: #ABC147;
+$color3: #95A65B;
+$color4: #608D4E;
+$color5: #26ADA1;
+$color6: #85794D;
+$color7: #3C5B45;
+
+$red: #af1c1c;
+$backgroundColor: $color11;
+$colorLink: $color5;
+$colorLine: $color2;
+$colorHeader: $color4;
+
+@import "__main";
+@import "__find";
+@import "__product";
+
+body {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.g-a {
+  .container {
+    width: 1100px;
+  }
+
+  a {
+    //text-decoration: underline;
+  }
+
+}
+
+.__margin0 {
+  margin: 0 !important;
+}
+
+.__padding0 {
+  padding: 0;
+}
+
+.__price {
+  color: $red;
+  letter-spacing: -1px;
+}
+
+.__clear {
+  clear: both;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.__ga-table {
+  display: table;
+}
+
+.__ga-row {
+  display: table-row;
+}
+
+.__ga-cell {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.block-contacts {
+  dt {
+    margin-top: 30px
+  }
+}
+
+.login-help-content {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .login-help-content {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-find {
+    .input-group {
+      width: 525px;
+      .input-group-btn {
+        width: 1px
+      }
+    }
+    .user-auth {
+      button {
+        max-width: 165px;
+        overflow: hidden;
+        text-overflow: ellipsis
+      }
+    }
+  }
+}
+
+.container-find {
+  .top-label {
+    margin-bottom: 15px;
+    .caption {
+      @media screen and (max-width: 480px) {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+    }
+    .top-menu-right {
+      > ul {
+        margin-bottom: 0;
+        li:last-child {
+          padding-right: 0;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .container-find {
+      .top-label {
+        .caption {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  form {
+    .col-md-3, .col-md-7, .col-md-2 {
+      padding: 0
+    }
+    select.towns {
+      display: none;
+    }
+    .select2-container {
+      min-width: 180px;
+      width: 100%;
+      display: block !important;
+    }
+    .btn-group.towns {
+      width: 100%;
+    }
+  }
+}
+
+.droptowns {
+  .select2-results-dept-1 {
+    .select2-result-label {
+      padding-left: 5px;
+    }
+  }
+  .select2-results-dept-2 {
+    .select2-result-label {
+      padding-left: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.__block-content {
+  margin-bottom: 30px;
+}
+
+header {
+  margin: 30px 0;
+}
+
+.__block-header {
+  border-bottom: 1px solid $colorLine;
+  color: $colorHeader;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  span {
+    font-size: medium;
+    margin-left: 10px;
+  }
+}
+
+.container-advertisements {
+  li {
+    margin-bottom: 30px;
+    p {
+      font-size: 13px;
+    }
+    h5 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.tooltip-inner {
+  //  border-radius: 0;
+}
+
+footer {
+  background-color: $backgroundColor;
+  border-top: 2px solid $colorLine;
+  margin-top: 100px;
+  .content {
+    padding: 50px 0;
+  }
+
+  .add-firm {
+    margin-top: 20px;
+  }
+
+  [class^='col-md'] {
+    & > ul {
+      & > li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  form {
+    input:nth-child(2) {
+      margin-top: 3px
+    }
+    textarea {
+      margin-top: 3px
+    }
+  }
+}
+
+.__container-image {
+  //display: table-cell;
+  //vertical-align: middle;
+  //border: 1px solid $backgroundColor;
+  border: 1px solid #ddd;
+  padding: 3px;
+  img {
+    margin: auto auto;
+    display: block;
+  }
+  &.logo {
+    width: 108px;
+    height: 108px;
+  }
+
+  &.product {
+    width: 128px;
+    height: 128px;
+  }
+  &.house {
+    width: 128px;
+    height: 128px;
+  }
+
+  &.user {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+.footer-bottom {
+  font-size: 13px;
+  margin: 30px 0;
+  /*  .production {
+      text-align: right;
+    }*/
+  /*  .buttons {
+      text-align: center;
+    }*/
+}
+
+.header-form-login {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.has-error {
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: $red;
+  }
+}
+
+.required:after {
+  color: $red;
+  content: "*";
+  margin-left: 5px;
+}
+
+.container-forgot-password {
+  margin-top: 30px;
+  ul {
+    li {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.input-group-addon {
+  &.glyphicon {
+    top: 0
+  }
+}
+
+.breadcrumb-responsive {
+  li {
+    width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: width 0.5s;
+    &:first-child, &:last-child {
+      width: auto;
+    }
+  }
+}
+
+.tags {
+  & > span {
+    margin-right: 10px;
+  }
+  a {
+    text-decoration: none;
+    margin-right: 5px;
+  }
+}
+
+.__update {
+  position: relative;
+
+  & > *:not(.__container-hover) {
+    opacity: 0.5;
+  }
+  .__container-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("../../../img/ajax-preloader-32-1.png") no-repeat center center;
+  }
+}
+
+.btn.loading {
+  animation: progress-bar-stripes .5s linear infinite
+}
+
+.right-banner {
+  iframe {
+    border: none;
+    height: 400px;
+    width: 240px;
+  }
+}
+
+.about-page {
+  div.row {
+    margin-bottom: 30px;
+  }
+  img {
+    border: 2px solid #ddd;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    div.row {
+      margin-bottom: 0;
+      div.col-md-6 {
+        margin-bottom: 20px;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+

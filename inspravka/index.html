@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Справочник предприятий</title>
+
+  <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/components/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/application/main/css/style.css">
+
+  <link rel="stylesheet" href="/components/select2/dist/css/select2.css">
+  <link rel="stylesheet" href="/components/npm-asset/select2-bootstrap-theme/dist/select2-bootstrap.css">
+
+
+
+  <link rel="stylesheet" href="/application/main/css/no-radius.css">
+  <meta name="keywords" content="найти, разместить, добавить, предприятия, фирмы, поиск, товары, услуги, цены, справочник, каталог, адреса, телефоны, итернет справка, электронный">
+  <meta name="description" content="Поиск, товары, услуги. Каталог фирм. Справочник предприятий">
+  <meta property="og:url" content="http://inspravka.local/" />
+  <meta property="og:title" content="Справочник предприятий" />
+  <meta property="og:description" content="Поиск, товары, услуги. Каталог фирм. Справочник предприятий" />
+  <meta property="og:image" content="http://inspravka.com/img/banner.png" />
+  <meta property="fb:app_id" content="1933349216886172" />
+  <meta name="mailru-domain" content="EMfaarTGuev3y9ua" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=""><small>Справочник предприятий. <span>Рекламно-информационный бизнес-портал</span></small></a>
+      <!-- <p class="navbar-text navbar-left">Справочник предприятий</p> -->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Добавить предприятие</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li><a href="#">Войти</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"></a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <header>
+    <div class="container">
+
+      <div class="col-md-2 container-logo">
+        <a href="/">
+                <img src="/img/logo_transparent_full.png" alt="Интернет-справка"/>
+            </a>
+        <div class="pull-right visible-xs-inline-block"> <a class="btn btn-default" href="/cabinet/">Вход
+            &rarr;</a>
+
+        </div>
+
+      </div>
+      <div class="col-md-10 container-find">
+        <div class="top-label text-muted row">
+          <div class="caption col-md-7">Справочник предприятий. Рекламно-информационный бизнес-портал.</div>
+          <div class="col-md-5 text-right top-menu-right">
+            <ul class="list-inline">
+              <li><a href="/cabinet/firms/add">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                Добавить предприятие
+                            </a> </li>
+              <li><a href="/contacts.html">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                Контакты
+                            </a> </li>
+            </ul>
+          </div>
+
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="well">
+          <div role="container-towns" class="container-regions-filter pull-left">
+            <select data-location="/__town__" data-url="/towns"></select>
+            <div class="btn-group towns">
+
+              <button type="button" class="btn btn-default dropdown-toggle select2-container" data-toggle="dropdown">
+                Все регионы
+                <span class="caret"></span>
+            </button>
+
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="/ukraine" class="bold">Украина</a>
+                </li>
+                <li>
+                  <a href="/russia" class="bold">Россия</a>
+                </li>
+                <li>
+                  <a href="/crimea" class="bold">Республика Крым</a>
+                </li>
+                <li>
+                  <a href="/sevastopol">Севастополь</a>
+                </li>
+                <li>
+                  <a href="/simferopol">Симферополь</a>
+                </li>
+                <li>
+                  <a href="/yalta">Ялта</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)" role="select-other-towns">Другие города ...</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+          <form name="search" method="get" action="/search/" class="form-inline clearfix" role="main-search-form">
+
+
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" id="search_q" name="search[q]" required="required" placeholder="Что будем искать?" class="form-control search" autocomplete="off" data-path="/search/search-data" />
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-primary not-animate">Найти</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group hidden-xs pull-right">
+              <a class="btn btn-default" href="/cabinet/">Вход
+            &rarr;</a>
+
+
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container g-a">
+
+    <div class="col-md-9">
+
+      <div class="rubrics __block-content">
+        <ul class="list-unstyled row">
+          <li class="col-md-6">
+            <h4>
+                        <a href="/odiezhda-biel-ie-gholovnyie-ubory.html" >Одежда, белье, головные уборы
+                            <sub class="text-muted" title="Количество предприятий">522</sub>
+                        </a>
+                    </h4>
+            <ul class="list-inline">
+              <li id="305" class="small">
+                <a href="/sportivnaia-odiezhda.html">
+                                        Спортивная одежда <sub class="text-muted" title="Количество предприятий">22</sub>
+                                    </a>
+              </li>
+              <li id="313" class="small">
+                <a href="/spietsodiezhda.html">
+                                        Спецодежда <sub class="text-muted" title="Количество предприятий">101</sub>
+                                    </a>
+              </li>
+              <li id="304" class="small">
+                <a href="/dzhinsovaia-odiezhda.html">
+                                        Джинсовая одежда <sub class="text-muted" title="Количество предприятий">21</sub>
+                                    </a>
+              </li>
+              <li id="311" class="small">
+                <a href="/golovnyie-ubory-sharfy-platki-ghalstuki-pierchatki.html">
+                                        Головные уборы, шарфы, платки, галстуки, перчатки <sub class="text-muted" title="Количество предприятий">13</sub>
+                                    </a>
+              </li>
+              <li id="307" class="small">
+                <a href="/svadiebnyie-salony.html">
+                                        Свадебные салоны <sub class="text-muted" title="Количество предприятий">63</sub>
+                                    </a>
+              </li>
+              <li>
+                <a href="/category/odiezhda-biel-ie-gholovnyie-ubory.html"> &rarr; </a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-md-6">
+            <h4>
+                        <a href="/mieditsina-liekarstva-tovary-obsluzhivaniie.html" >Медицина. Лекарства, товары, обслуж...
+                            <sub class="text-muted" title="Количество предприятий">643</sub>
+                        </a>
+                    </h4>
+            <ul class="list-inline">
+              <li id="1011" class="small">
+                <a href="/mieditsinskiie-analizy-i-issliedovaniia.html">
+                                        Медицинские анализы и исследования <sub class="text-muted" title="Количество предприятий">8</sub>
+                                    </a>
+              </li>
+              <li id="1024" class="small">
+                <a href="/konsul-tatsii-zhienskiie.html">
+                                        Консультации женские <sub class="text-muted" title="Количество предприятий">15</sub>
+                                    </a>
+              </li>
+              <li id="1026" class="small">
+                <a href="/mieditsinskiie-tsientry.html">
+                                        Медицинские центры <sub class="text-muted" title="Количество предприятий">120</sub>
+                                    </a>
+              </li>
+              <li id="1022" class="small">
+                <a href="/muzhskoie-zdorov-ie-androloghiia.html">
+                                        Мужское здоровье (андрология)  <sub class="text-muted" title="Количество предприятий">2</sub>
+                                    </a>
+              </li>
+              <li>
+                <a href="/category/mieditsina-liekarstva-tovary-obsluzhivaniie.html"> &rarr; </a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-md-6">
+            <h4>
+                        <a href="/priedmiety-intier-iera.html" >Предметы интерьера
+                            <sub class="text-muted" title="Количество предприятий">214</sub>
+                        </a>
+                    </h4>
+            <ul class="list-inline">
+              <li id="1708" class="small">
+                <a href="/baghiet.html">
+                                        Багет <sub class="text-muted" title="Количество предприятий">8</sub>
+                                    </a>
+              </li>
+              <li id="1703" class="small">
+                <a href="/iskusstviennyie-rastieniia-tsviety-soputstvuiushchiie-tovary.html">
+                                        Искусственные растения, цветы, сопутствующие товары <sub class="text-muted" title="Количество предприятий">4</sub>
+                                    </a>
+              </li>
+              <li id="1704" class="small">
+                <a href="/liustry-torshiery-bra-plafony.html">
+                                        Люстры, торшеры, бра, плафоны <sub class="text-muted" title="Количество предприятий">42</sub>
+                                    </a>
+              </li>
+              <li>
+                <a href="/category/priedmiety-intier-iera.html"> &rarr; </a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-md-6">
+            <h4>
+                        <a href="/sport-turizm-dosugh.html" >Спорт. Туризм. Досуг
+                            <sub class="text-muted" title="Количество предприятий">1636</sub>
+                        </a>
+                    </h4>
+            <ul class="list-inline">
+              <li id="2132" class="small">
+                <a href="/pliazhnoie-oborudovaniie-aksiessuary.html">
+                                        Пляжное оборудование, аксессуары <sub class="text-muted" title="Количество предприятий">9</sub>
+                                    </a>
+              </li>
+              <li id="2103" class="small">
+                <a href="/turistichieskoie-snariazhieniie-i-invientar.html">
+                                        Туристическое снаряжение и инвентарь <sub class="text-muted" title="Количество предприятий">24</sub>
+                                    </a>
+              </li>
+              <li id="2136" class="small">
+                <a href="/gostinitsy.html">
+                                        Гостиницы <sub class="text-muted" title="Количество предприятий">58</sub>
+                                    </a>
+              </li>
+              <li id="2111" class="small">
+                <a href="/gostinitsy-riekrieatsionnogho-komplieksa.html">
+                                        Гостиницы рекреационного комплекса <sub class="text-muted" title="Количество предприятий">376</sub>
+                                    </a>
+              </li>
+              <li>
+                <a href="/category/sport-turizm-dosugh.html"> &rarr; </a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-md-6">
+            <h4>
+                        <a href="/sriedstva-massovoi-informatsii-rieklama-polighrafiia.html" >Средства массовой информации. Рекла...
+                            <sub class="text-muted" title="Количество предприятий">1043</sub>
+                        </a>
+                    </h4>
+            <ul class="list-inline">
+              <li id="2712" class="small">
+                <a href="/eliektronnyie-bazy-dannykh.html">
+                                        Электронные базы данных <sub class="text-muted" title="Количество предприятий">2</sub>
+                                    </a>
+              </li>
+              <li id="2713" class="small">
+                <a href="/informatsionno-spravochnyie-sluzhby.html">
+                                        Информационно-справочные службы <sub class="text-muted" title="Количество предприятий">71</sub>
+                                    </a>
+              </li>
+              <li id="2718" class="small">
+                <a href="/zhurnaly.html">
+                                        Журналы <sub class="text-muted" title="Количество предприятий">25</sub>
+                                    </a>
+              </li>
+              <li id="2704" class="small">
+                <a href="/informatsionnyie-uslughi.html">
+                                        Информационные услуги <sub class="text-muted" title="Количество предприятий">36</sub>
+                                    </a>
+              </li>
+              <li id="2707" class="small">
+                <a href="/suvienirnaia-rieklamnaia-produktsiia.html">
+                                        Сувенирная рекламная продукция <sub class="text-muted" title="Количество предприятий">27</sub>
+                                    </a>
+              </li>
+              <li>
+                <a href="/category/sriedstva-massovoi-informatsii-rieklama-polighrafiia.html"> &rarr; </a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-md-6">
+            <h4>
+                        <a href="/kantstovary.html" >Канцтовары
+                            <sub class="text-muted" title="Количество предприятий">167</sub>
+                        </a>
+                    </h4>
+            <ul class="list-inline">
+              <li id="2906" class="small">
+                <a href="/flaghi.html">
+                                        Флаги <sub class="text-muted" title="Количество предприятий">16</sub>
+                                    </a>
+              </li>
+              <li id="2907" class="small">
+                <a href="/tovary-dlia-khudozhiestviennykh-rabot.html">
+                                        Товары для художественных работ <sub class="text-muted" title="Количество предприятий">1</sub>
+                                    </a>
+              </li>
+              <li id="2901" class="small">
+                <a href="/pischiebumazhnyie-tovary-papki-blanki.html">
+                                        Писчебумажные товары, папки, бланки <sub class="text-muted" title="Количество предприятий">31</sub>
+                                    </a>
+              </li>
+              <li id="2904" class="small">
+                <a href="/shtiempiel-naia-produktsiia-piechati-shtampy-kraska-i-aksiessuary-k-nim.html">
+                                        Штемпельная продукция (печати, штампы, краска и аксе... <sub class="text-muted" title="Количество предприятий">18</sub>
+                                    </a>
+              </li>
+              <li>
+                <a href="/category/kantstovary.html"> &rarr; </a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-md-6">
+            <h4>
+                        <a href="/transport.html" >Транспорт
+                            <sub class="text-muted" title="Количество предприятий">1072</sub>
+                        </a>
+                    </h4>
+          </li>
+          <li class="col-md-6">
+            <h4><a href="/category">Все категории &rarr;
+                    </a>
+                </h4>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- New products ------------------------------------------------------------------ -->
+      <div class="__container-products __block-content clearfix">
+        <h4 class="__block-header">Новые товары (услуги)</h4>
+        <ul class="list-unstyled row">
+          <li class="col-xs-6 col-md-3">
+            <a href="/p78406_gazobeton-glavstroiblok-625kh250kh100-625kh250kh150-625kh200kh300-d500.html">
+              <div class="__container-image product">
+                <img src="http://inspravka.local/photos/cache/thumb_120x120/photos/origin/product/no-image.png" alt="no image">
+              </div>
+            </a>
+
+            <div class="price">
+              <span class="label label-primary">4860</span>
+            </div>
+
+            <div>
+              <a href="/p78406_gazobeton-glavstroiblok-625kh250kh100-625kh250kh150-625kh200kh300-d500.html">Газобетон ГлавСтройБлок, 625х250х100, 625х250х150, 625х200х300, D500</a>
+            </div>
+          </li>
+          <li class="col-xs-6 col-md-3">
+            <a href="/p78385_suvenirnaia-produktsiia-s-logotipom.html">
+              <div class="__container-image product">
+                <img src="http://inspravka.local/photos/cache/thumb_120x120/photos/origin/product/no-image.png" alt="no image">
+              </div>
+            </a>
+
+            <div class="price">
+              <span class="label label-primary">от 1 руб.</span>
+            </div>
+
+            <div>
+              <a href="/p78385_suvenirnaia-produktsiia-s-logotipom.html">Сувенирная продукция с логотипом</a>
+            </div>
+          </li>
+          <li class="col-xs-6 col-md-3">
+            <a href="/p78383_perevozka-lezhachikh-bolnykh-invalidov-koliasochnikov-i-lits-s-inymi-ogranicheniiami.html">
+              <div class="__container-image product">
+                <img src="http://inspravka.local/photos/cache/thumb_120x120/photos/origin/product/no-image.png" alt="no image">
+              </div>
+            </a>
+
+            <div class="price">
+              <span class="label label-primary">от 1 руб.</span>
+            </div>
+
+            <div>
+              <a href="/p78383_perevozka-lezhachikh-bolnykh-invalidov-koliasochnikov-i-lits-s-inymi-ogranicheniiami.html">Перевозка лежачих больных,инвалидов-колясочников и лиц с иными ограничениями</a>
+            </div>
+          </li>
+          <li class="col-xs-6 col-md-3">
+            <a href="/p78382_bloknoty.html">
+              <div class="__container-image product">
+                <img src="http://inspravka.local/photos/cache/thumb_120x120/photos/origin/product/no-image.png" alt="no image">
+              </div>
+            </a>
+
+            <div class="price">
+              <span class="label label-primary">от 1 руб.</span>
+            </div>
+
+            <div>
+              <a href="/p78382_bloknoty.html">Блокноты</a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+      <div class="clearfix"></div>
+
+      <!-- New firms ------------------------------------------------------------------ -->
+      <div class="container-new-firms __block-content clearfix">
+        <h4 class="__block-header">Новые предприятия</h4>
+        <ul class="list-unstyled row">
+          <li class="col-md-6 firm-container">
+
+            <div class="firm-logo">
+              <div class="__container-image logo">
+                <a href="//35679.inspravka.com/">
+            <img src="http://inspravka.local/photos/cache/thumb_100x100/photos/origin/logo/no-image.png" alt="no image">
+        </a>
+              </div>
+            </div>
+            <div class="firm-info">
+              <a href="//35679.inspravka.com/">OPTICS-PRO - Интернет-магазин профессиональной оптики для охоты</a>
+
+
+              <div class="address small">Киев: бул. Леси Украинки, 26</div>
+
+              <div class="phones">
+                <ul class="list-inline">
+                  <li class="phone">+ 380 (50) 759-88-93</li>
+                </ul>
+              </div>
+
+
+
+              <div class="firm-rate">
+                <ul class="list-inline small firm-rate-info text-muted">
+                  <li title="Проверено" role="element-tooltip">
+                    <i class="fa fa-check-circle" style="color: #5cb85c"></i>
+                  </li>
+                  <li title="Рейтинг" role="element-tooltip">
+                    <span class="glyphicon glyphicon-stats"></span> 77
+                  </li>
+                  <li title="Дата обновления" role="element-tooltip">
+                    <span class="glyphicon glyphicon-calendar"></span> 19.01.18
+                  </li>
+
+                  <li>
+                    <div class="container-menu">
+                      <div class="btn-group btn-group-xs">
+                        <button type="button" class="btn btn-default" title="Сообщить об ошибке" data-action-form="/ajax/send-error-message/35679" role="element-tooltip" data-action="send-error-message">
+                            <i class="fas fa-exclamation fa-fw"></i>
+                        </button>
+                        <div class="btn-group btn-group-xs">
+                          <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" title="скачать прайс" role="element-tooltip" disabled>
+                                <i class="fas fa-dollar-sign fa-fw" aria-hidden="true"></i>
+                            </button>
+                          <ul class="dropdown-menu">
+                          </ul>
+                        </div>
+
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="kind-info">
+                <ul class="list-inline rubrics small">
+                  <li>
+                    <a href="/rybolovnyie-i-okhotnich-i-tovary.html">Рыболовные и охотничьи товары</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="col-md-6 firm-container">
+
+            <div class="firm-logo">
+              <div class="__container-image logo">
+                <a href="//35669.inspravka.com/">
+            <img src="http://inspravka.local/photos/cache/thumb_100x100/photos/origin/logo/no-image.png" alt="no image">
+        </a>
+              </div>
+            </div>
+            <div class="firm-info">
+              <a href="//35669.inspravka.com/">Yakuza - Интернет магазин автозапчастей на японские авто</a>
+
+
+              <div class="address small">Киев: ул. Садовая, 70/110</div>
+
+              <div class="phones">
+                <ul class="list-inline">
+                  <li class="phone">+ 380 (73) 234-61-51</li>
+                  <li class="phone">+ 380 (98) 234-61-51</li>
+                </ul>
+              </div>
+
+
+
+              <div class="firm-rate">
+                <ul class="list-inline small firm-rate-info text-muted">
+                  <li title="Проверено" role="element-tooltip">
+                    <i class="fa fa-check-circle" style="color: #5cb85c"></i>
+                  </li>
+                  <li title="Рейтинг" role="element-tooltip">
+                    <span class="glyphicon glyphicon-stats"></span> 77
+                  </li>
+                  <li title="Дата обновления" role="element-tooltip">
+                    <span class="glyphicon glyphicon-calendar"></span> 17.01.18
+                  </li>
+
+                  <li>
+                    <div class="container-menu">
+                      <div class="btn-group btn-group-xs">
+                        <button type="button" class="btn btn-default" title="Сообщить об ошибке" data-action-form="/ajax/send-error-message/35669" role="element-tooltip" data-action="send-error-message">
+                            <i class="fas fa-exclamation fa-fw"></i>
+                        </button>
+                        <div class="btn-group btn-group-xs">
+                          <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" title="скачать прайс" role="element-tooltip" disabled>
+                                <i class="fas fa-dollar-sign fa-fw" aria-hidden="true"></i>
+                            </button>
+                          <ul class="dropdown-menu">
+                          </ul>
+                        </div>
+
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="kind-info">
+                <ul class="list-inline rubrics small">
+                  <li>
+                    <a href="/avtozapchasti-lieghkovyie-avtomobili-ukraina-rossiia.html">Автозапчасти - легковые автомобили (Украина, Россия)</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+        <script type="text/template" id="send-error-message-form">
+          <div class="popover fade bottom in" role="tooltip" style="width: 350px; left: -230px; top:25px; display: block">
+            <div class="arrow" style="left: 88%;"></div>
+            <h3 class="popover-title">Сообщение об ошибке</h3>
+            <div class="popover-content">
+              <form name="error_message" method="post">
+                <div id="error_message">
+                  <div class="form-group "> <textarea id="error_message_message" name="error_message[message]" placeholder="Напишите, какая именно информация неверная ..." rows="7" class="form-control"></textarea> </div>
+                  <div><button type="submit" id="error_message_submit" name="error_message[submit]" class="btn btn-default">Отправить</button> <button class="btn btn-default" type="button">Отмена</button></div>
+                  <input type="hidden" id="error_message__token" name="error_message[_token]" value="98FhfA_dz3N6k-uLRIM6_5KojCUH5PKzkC9_22ucWzU" /></div>
+              </form>
+            </div>
+          </div>
+        </script>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+
+      <div class="right-banner">
+      </div>
+
+      <h4 class="__block-header">Новости</h4>
+      <div class="__block-content rss-content">
+        <i class="fa fa-circle-o-notch fa-spin fa-lg text-muted"></i>
+        <span class="small text-muted">Загрузка новостей ...</span>
+      </div>
+
+
+    </div>
+
+  </div>
+  <footer>
+    <div class="content">
+      <div class="container">
+        <div class="col-md-4 footer-block">
+
+          <ul class="list-unstyled">
+
+            <li class="first"> <a href="/about.html">О проекте</a>
+            </li>
+
+
+            <li> <a href="/info-ru.html">Справочные службы России</a>
+            </li>
+
+
+            <li> <a href="/info.html">Справочные службы Украины</a>
+            </li>
+
+
+            <li class="last"> <a href="/contacts.html">Контакты</a>
+            </li>
+
+
+          </ul>
+
+
+        </div>
+        <div class="col-md-4 statistic footer-block">
+          <h4>Статистика портала</h4>
+          <a class="btn btn-primary btn-lg add-firm" href="/cabinet/firms/add">Добавить предприятие</a>
+        </div>
+        <div class="col-md-4 footer-block">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="col-md-4 footer-block">
+        &copy; 2001 &mdash; 2018 Интернет-справка 082
+      </div>
+      <div class="col-md-4 buttons footer-block">
+      </div>
+      <div class="col-md-4 production footer-block">
+        разработка <a href="javascript:void(0)" onclick="window.open('http://g-a.crimea.ua','_blank')">G-Algorithm, company</a>
+      </div>
+    </div>
+  </div>
+  <script src="/components/require.js"></script>
+  <script src="/js/config.js"></script>
+  <script type="text/javascript">
+    require(['jquery', 'bootstrap', 'main_bundle/layout', 'main_bundle/message-form']);
+  </script>
+  <script type="text/javascript">
+    // define('rss_path', '/vkrim24/feed')
+    // requirejs(['main_bundle/send-error-message', 'main_bundle/rss-feed'])
+  </script>
+</body>
+
+</html>

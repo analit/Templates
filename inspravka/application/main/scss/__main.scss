@@ -1,0 +1,142 @@
+.container-logo {
+  min-width: 166px
+}
+
+.container-info {
+  div {
+    .button {
+      float: left;
+      margin-right: 15px;
+    }
+    height: 65px;
+  }
+  margin-bottom: 30px;
+}
+
+.breadcrumb > li + li::before {
+  content: "\2192";
+  color: #777;
+
+}
+
+@media (min-width: 768px) {
+  .rubrics h4 {
+    white-space: normal
+  }
+}
+
+@media (min-width: 768px) {
+  .firms-container, .products-container {
+    li:nth-child(2) {
+      hr {
+        display: none;
+      }
+    }
+  }
+}
+
+.phones {
+  margin-bottom: 5px;
+  .phone {
+    letter-spacing: -1px;
+  }
+}
+
+.firm-container-info, .product-container-info {
+  .firm {
+    margin: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 250px;
+  }
+  .address {
+    margin: 5px 0;
+  }
+
+}
+
+.rubrics {
+  h4 > a > sub, h4 > a > sup {
+    font-size: 12px;
+  }
+
+  & > ul {
+    & > li {
+      margin: 0 0 20px 0;
+      height: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &.subcategory {
+        height: 30px;
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+      &:nth-last-child(1) {
+        height: auto;
+      }
+      &:nth-last-child(2) {
+        height: auto;
+      }
+    }
+  }
+}
+
+.__container-products {
+  li {
+    font-size: 13px;
+    margin-bottom: 20px !important;
+    .price {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.footer-block {
+  margin-bottom: 20px
+}
+
+.container-new-firms {
+  .firm-info {
+    margin-left: 125px;
+  }
+}
+
+.captcha {
+  img {
+    margin: 5px 10px 10px 0;
+  }
+}
+
+.rss-content {
+  display: none;
+  i {
+    color: $colorHeader;
+    margin-right: 10px;
+    opacity: .5;
+  }
+  ul {
+    margin-top: 20px;
+    li {
+      margin-bottom: 20px;
+      p {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+.right-banner {
+  margin-bottom: 55px;
+}
+
+.container-regions-filter > select {
+  display: none;
+}
+
+@media (min-width: 768px){
+  .navbar-brand > small > span {
+    display: none;
+  }
+}
