@@ -27,9 +27,9 @@ body {
     width: 1100px;
   }
 
-  a {
+  // a {
     //text-decoration: underline;
-  }
+  // }
 
 }
 
@@ -83,73 +83,87 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
-  .container-find {
-    .input-group {
-      width: 525px;
-      .input-group-btn {
-        width: 1px
-      }
-    }
-    .user-auth {
-      button {
-        max-width: 165px;
-        overflow: hidden;
-        text-overflow: ellipsis
-      }
-    }
-  }
-}
-
 .container-find {
-  .top-label {
-    margin-bottom: 15px;
-    .caption {
-      @media screen and (max-width: 480px) {
-        text-align: center;
-        margin-bottom: 5px;
-      }
-    }
-    .top-menu-right {
-      > ul {
-        margin-bottom: 0;
-        li:last-child {
-          padding-right: 0;
-        }
-      }
-      @media screen and (max-width: 480px) {
-        text-align: center;
-      }
+  [role=container-towns] {
+    .towns, button {
+      width: 100%;
     }
   }
-
-  @media screen and (max-width: 480px) {
-    .container-find {
-      .top-label {
-        .caption {
-          text-align: center;
-        }
-      }
-    }
-  }
-
   form {
-    .col-md-3, .col-md-7, .col-md-2 {
-      padding: 0
-    }
-    select.towns {
-      display: none;
-    }
-    .select2-container {
-      min-width: 180px;
-      width: 100%;
-      display: block !important;
-    }
-    .btn-group.towns {
-      width: 100%;
+    .form-group, .input-group {
+      width: 100%
     }
   }
 }
+
+// @media (min-width: 1200px) {
+//   .container-find {
+//     .input-group {
+//       width: 525px;
+//       .input-group-btn {
+//         width: 1px
+//       }
+//     }
+//     .user-auth {
+//       button {
+//         max-width: 165px;
+//         overflow: hidden;
+//         text-overflow: ellipsis
+//       }
+//     }
+//   }
+// }
+
+
+// .container-find {
+//   .top-label {
+//     margin-bottom: 15px;
+//     .caption {
+//       @media screen and (max-width: 480px) {
+//         text-align: center;
+//         margin-bottom: 5px;
+//       }
+//     }
+//     .top-menu-right {
+//       > ul {
+//         margin-bottom: 0;
+//         li:last-child {
+//           padding-right: 0;
+//         }
+//       }
+//       @media screen and (max-width: 480px) {
+//         text-align: center;
+//       }
+//     }
+//   }
+
+//   @media screen and (max-width: 480px) {
+//     .container-find {
+//       .top-label {
+//         .caption {
+//           text-align: center;
+//         }
+//       }
+//     }
+//   }
+
+//   form {
+//     .col-md-3, .col-md-7, .col-md-2 {
+//       padding: 0
+//     }
+//     select.towns {
+//       display: none;
+//     }
+//     .select2-container {
+//       min-width: 180px;
+//       width: 100%;
+//       display: block !important;
+//     }
+//     .btn-group.towns {
+//       width: 100%;
+//     }
+//   }
+// }
 
 .droptowns {
   .select2-results-dept-1 {
@@ -171,9 +185,9 @@ body {
   margin-bottom: 30px;
 }
 
-header {
-  margin: 30px 0;
-}
+// header {
+//   margin: 30px 0;
+// }
 
 .__block-header {
   border-bottom: 1px solid $colorLine;
@@ -388,6 +402,9 @@ footer {
     img {
       width: 100%;
     }
+  }
+  .container-logo {
+    display: none;
   }
 }
 
